@@ -1,0 +1,5 @@
+# .gitignore (create this file)
+node_modules/
+config.env
+dist/
+.env
