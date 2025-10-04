@@ -86,7 +86,7 @@ export const getQuoteOfTheDay = async (req: Request, res: Response):Promise<void
             return 
           }
       
-          // Remove any old quote-of-the-day flags
+          
           await Quote.updateMany(
             { isQuoteOfTheDay: true },
             { $set: { isQuoteOfTheDay: false, quoteOfTheDayDate: null } }
@@ -112,7 +112,7 @@ export const getQuotesByAuthor = async (req: Request, res: Response):Promise<voi
   
     if (quotes.length === 0) {
       res.status(404).json({ message: 'No quotes found for this author' });
-      return 
+      return
     }
   
     res.status(200).json({ results: quotes.length, quotes });
